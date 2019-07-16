@@ -1,0 +1,4 @@
+tokenfile.txt
+*.pyc
+__pycache__/*
+*.db
