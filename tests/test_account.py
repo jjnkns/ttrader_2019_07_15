@@ -22,6 +22,7 @@ class TestAccount(unittest.TestCase):
         schema(DBPATH)
         seed(DBPATH)
 
+
     def tearDown(self):
         pass
         #os.remove(DBPATH)
@@ -60,3 +61,12 @@ class TestAccount(unittest.TestCase):
 
     def test_get_trades_for(self):
         pass
+
+    def test_check_password(self):
+        user = Account()
+        user_info = user.one_from_where_clause('WHERE username =?', username)
+        hashed_pw = (user_info.values['password_hash'])
+        hashed_pw = hashed_pw.encode()
+        password = password.encode()
+        return bycrypt.checkpw(password, hashed_pw)#returns True or False
+

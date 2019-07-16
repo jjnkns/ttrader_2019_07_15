@@ -7,7 +7,7 @@ import bcrypt
 #needs to be a byte string
 def get_bcrypt_pw_hash(plain_text_pw):
     if isinstance('String',plain_text_pw):
-        bytestring_pw = plain_text_pw.encode()
+       bytestring_pw = plain_text_pw.encode()
     # salt = bcrypt.gensalt()
     # salt resets every time function is run
     # print the salt here just to demonstrate where it is in the returned hash
